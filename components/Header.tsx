@@ -1,5 +1,6 @@
 "use client"
 
+import { Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 type NavItem = { label:string ; href:string} 
@@ -32,11 +33,19 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
+    <header id="top" className="fixed top-0 left-0 w-full z-50 border-b bg-[#003366] text-white backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <div className="flex flex-col items-center jusify-between">
-          <div className="font-semibold">松ヶ丘</div>
-          <div className="font-semibold">MMBC</div>
+        <div className="flex-col">
+          <div className="font-semibold flex justify-between">
+            <button
+            >
+                            {/**ここにホームボタンを設置したい */}
+
+              松が丘
+            </button>
+          </div>
+          <div className="font-semibold flex justify-between">MMBC</div>
+          <div className="font-normal text-xs hidden md:block border-t flex justify-start">Matsugaoka Mini BasketBall Club</div>
         </div>
 
         {/**PCmenu */}
@@ -52,13 +61,13 @@ export default function Header() {
           ))}
         </nav>
         
-        {/*mobile menu ここをバーガーメニューに変えたいがとりあえずこのまま*/}
+        {/*mobile menu*/}
         <button
-          className="md:hidden border rounded px-4 py-3 hover:bg-gray-300"
+          className="md:hidden px-4 py-3"
           onClick={()=>{setOpen((v)=>!v)}}
           aria-label="menu"
         >
-          {open ? "閉じる" : "メニュー"}
+          {open ? <X size={28}/> : <Menu size={28}/>}
         </button>
 
       </div>
@@ -70,7 +79,7 @@ export default function Header() {
               <button
                 key={item.href}
                 onClick={()=>{onClickItem(item.href)}}
-                className="px-3 py-2 text-left hover:bg-gray-100"
+                className="px-3 py-2 text-left text-black hover:bg-gray-100"
               >
                 {item.label}
               </button>
