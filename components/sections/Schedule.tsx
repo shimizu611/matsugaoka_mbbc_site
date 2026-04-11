@@ -6,7 +6,7 @@ export default function Schedule(){
     ]
     const girlsPracticeDays = [
         "木曜 16:15～18:00 （第1週）",
-        "金曜 18:00～20:30 （第1週を除く）",
+        "金曜 18:30～20:30 （第1週を除く）",
         "土曜・日曜 （随時）",
     ]
 
