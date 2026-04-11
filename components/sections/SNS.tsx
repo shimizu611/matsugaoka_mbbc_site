@@ -2,7 +2,7 @@ import { FaInstagram } from "react-icons/fa"
 
 export default function SNS(){
     return(
-        <section id="sns" className="scroll-mt-20 md:px-4 py-12 md:py-16">
+        <section id="sns" className="scroll-mt-20 px-4 py-12 md:py-16">
             <div className="flex">
                 <div className="w-1 h-16 bg-black mr-4"/>
                 <div>
@@ -16,7 +16,7 @@ export default function SNS(){
             </div>
             <div className="flex items-center justify-center md:justify-start">
                 <a
-                    href="https://instagram.com/acount"
+                    href="https://www.instagram.com/matsugaoka_mbbc?igsh=eGphbWZyMTNxcGtl"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 mt-6 ml-6 text-gray-700 hover:text-pink-500 transition"

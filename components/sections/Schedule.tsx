@@ -6,7 +6,7 @@ export default function Schedule(){
     ]
 
     return(
-        <section id="schedule" className="scroll-mt-20 py-12 md:py-16">
+        <section id="schedule" className="scroll-mt-20 px-4 md:px-0 py-12 md:py-16">
             <div className="flex">
                 <div className="w-1 h-16 bg-black mr-4"/>
                 <div>
