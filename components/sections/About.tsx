@@ -27,7 +27,7 @@ export default function About() {
                     <div className="md:w-1/2 flex justify-end">
                         <div className="relative w-[90%] md:w-full aspect-[4/3]">
                             <Image
-                                src="/images/image001.jpg"
+                                src="/images/image001.JPG"
                                 alt="クラス紹介"
                                 fill
                                 className="rounded-2xl object-cover"
