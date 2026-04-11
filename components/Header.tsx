@@ -44,7 +44,7 @@ export default function Header() {
               松が丘
             </button>
           </div>
-          <div className="font-semibold flex justify-between">MMBC</div>
+          <div className="font-semibold flex justify-between">MBBC</div>
           <div className="font-normal text-xs hidden md:block border-t flex justify-start">Matsugaoka Mini BasketBall Club</div>
         </div>
 

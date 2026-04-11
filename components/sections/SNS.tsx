@@ -23,6 +23,7 @@ export default function SNS(){
                 >
                     <FaInstagram className="w-10 h-10" />
                     <span className="text-2xl">Instagram</span>
+                    <p className="text-xs px-4">*リンクはこちら</p>
 
                 </a>
             </div>

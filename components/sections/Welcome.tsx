@@ -49,6 +49,9 @@ export default function Welcome(){
                         </div>
                         <div className="pt-6">
                             <p className="mt-4 leading-10 text-gray-700">
+                                小学１年生から６年生まで、ご入会いただけます。
+                            </p>
+                            <p className="mt-4 leading-10 text-gray-700">
                                 見学・体験練習も随時受け付けていますので、
                             </p>
                             <p className="leading-10 text-gray-700">

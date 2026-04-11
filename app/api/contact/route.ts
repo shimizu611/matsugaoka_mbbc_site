@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(req: Request) {
     const body = await req.json()
 
-    const { name, kana, school, grade, telNum, email, message, company } = body
+    const { name, kana, school, grade,gender, telNum, email, message, company } = body
 
     // スパム対策
     if(company) {
@@ -23,6 +23,7 @@ export async function POST(req: Request) {
                 <p>カナ： ${kana}</p>
                 <p>学校： ${school}</p>
                 <p>学年： ${grade}</p>
+                <p>性別： ${gender}</p>
                 <p>電話番号： ${telNum}</p>
                 <p>メールアドレス： ${email}</p>
                 <p>内容： ${message}</p>

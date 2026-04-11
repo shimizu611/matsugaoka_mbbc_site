@@ -8,6 +8,7 @@ export default function Contact() {
     kana:"",
     school:"",
     grade:"",
+    gender:"",
     telNum:"",
     email:"",
     message:"",
@@ -24,7 +25,7 @@ export default function Contact() {
     e.preventDefault()
     
     // バリデーション
-    if (!form.name || !form.kana || !form.school || !form.grade || !form.email || !form.message){
+    if (!form.name || !form.kana || !form.school ||!form.gender || !form.grade || !form.email || !form.message){
       alert("必須項目を入力してください")
       return
     }
@@ -40,7 +41,7 @@ export default function Contact() {
 
     if(res.ok) {
       setSuccess(true)
-      setForm({ name:"", kana:"",school:"", grade:"", telNum:"", email:"", message:"", company:"" })
+      setForm({ name:"", kana:"",school:"", grade:"", gender:"", telNum:"", email:"", message:"", company:"" })
 
       // 10秒後にコメントを削除
       setTimeout(() => {
@@ -112,6 +113,14 @@ export default function Contact() {
                     placeholder="必須"
                     name="grade"
                     value={form.grade}
+                    onChange={handleChange}
+                    type="text" className="input h-10 mb-2 w-full border rounded"
+                  />
+                  <p className="mb-2">性別</p>
+                  <input
+                    placeholder="3年生以降、男女で活動が分かれます。"
+                    name="gender"
+                    value={form.gender}
                     onChange={handleChange}
                     type="text" className="input h-10 mb-2 w-full border rounded"
                   />
