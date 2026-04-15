@@ -20,6 +20,9 @@ export default function About() {
                         <h2 className="pt-8 text-4xl">松が丘ミニバスケットボール</h2>
                         <h2 className="py-6 text-4xl">クラブについて</h2>
                         <p className="mt-4 leading-10 text-gray-700">
+                            兵庫県の明石市を拠点に活動しています。
+                        </p>
+                        <p className="mt-4 leading-10 text-gray-700">
                             バスケットボールを通して、「考える力」「挑戦する心」「仲間を大切にする姿勢」を育みます。勝ち負けだけにとらわれず、基礎技術の習得と人間的成長を重視し、あいさつや返事、チームワークを大切にした指導を行っています。
                         </p>
                     </div>
