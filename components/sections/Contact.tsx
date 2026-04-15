@@ -107,12 +107,12 @@ export default function Contact() {
             {/* 右：基本フォーム */}
             <div className="md:w-1/2">
               <div className="flex-row">
-                  <label className="mb-2">お問い合わせ種別</label>
+                  <p className="mb-2">【 お問い合わせ種別 】</p>
                   <select
                     name="inquiryType"
                     value={inquiryType}
                     onChange={(e) => setInquiryType(e.target.value as inquiryType)}
-                    className="h-10 mb-2 w-full border rounded"
+                    className="h-10 mb-4 w-full border rounded bg-[#D0DBE8] text-slate-800"
                   >
                     <option value="visit">見学・体験の申し込み</option>
                     <option value="match">試合の申し込み</option>
