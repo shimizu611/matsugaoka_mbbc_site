@@ -2,14 +2,18 @@
 
 import { useState } from "react"
 
+type inquiryType = "visit" | "match"
+
 export default function Contact() {
+  const [inquiryType, setInquiryType] = useState<inquiryType>("visit")
   const [form, setForm] = useState({
     name:"",
     kana:"",
+    teamName:"",
     school:"",
     grade:"",
     gender:"",
-    telNum:"",
+    phone:"",
     email:"",
     message:"",
     company:"",
@@ -25,23 +29,43 @@ export default function Contact() {
     e.preventDefault()
     
     // バリデーション
-    if (!form.name || !form.kana || !form.school ||!form.gender || !form.grade || !form.email || !form.message){
-      alert("必須項目を入力してください")
-      return
+    if (inquiryType === "visit"){
+      if (
+        !form.name ||
+        !form.kana ||
+        !form.school ||
+        !form.gender ||
+        !form.grade ||
+        !form.email ||
+        !form.message){
+        alert("必須項目を入力してください")
+        return
+      }        
+    }
+    if(inquiryType === "match") {
+      if(!form.teamName || !form.email || !form.message){
+        alert("必須項目を入力してください")
+      }
     }
 
     setLoading(true)
 
     const res = await fetch("/api/contact", {
       method: "POST",
-      body: JSON.stringify(form)
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...form,
+        inquiryType,
+      })
     })
 
     setLoading(false)
 
     if(res.ok) {
       setSuccess(true)
-      setForm({ name:"", kana:"",school:"", grade:"", gender:"", telNum:"", email:"", message:"", company:"" })
+      setForm({ name:"", kana:"", teamName:"", school:"", grade:"", gender:"", phone:"", email:"", message:"", company:"" })
 
       // 10秒後にコメントを削除
       setTimeout(() => {
@@ -83,57 +107,84 @@ export default function Contact() {
             {/* 右：基本フォーム */}
             <div className="md:w-1/2">
               <div className="flex-row">
-                  <p className="mb-2">お名前（お子様）</p>
-                  <input
-                    placeholder="必須"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    type="text" className="input h-10 mb-2 w-full border rounded"
-                  />
-                  <p className="mb-2">フリガナ</p>
-                  <input
-                    placeholder="必須"
-                    pattern="[\u30A0-\u30FFー\s]+"
-                    name="kana"
-                    value={form.kana}
-                    onChange={handleChange}
-                    type="text" className="input h-10 mb-2 w-full border rounded"
-                  />
-                  <p className="mb-2">現在通っている学校</p>
-                  <input
-                    placeholder="必須"
-                    name="school"
-                    value={form.school}
-                    onChange={handleChange}
-                    type="text" className="input h-10 mb-2 w-full border rounded"
-                  />
-                  <p className="mb-2">学年</p>
-                  <input
-                    placeholder="必須"
-                    name="grade"
-                    value={form.grade}
-                    onChange={handleChange}
-                    type="text" className="input h-10 mb-2 w-full border rounded"
-                  />
-                  <p className="mb-2">性別</p>
-                  <input
-                    placeholder="3年生以降、男女で活動が分かれます。"
-                    name="gender"
-                    value={form.gender}
-                    onChange={handleChange}
-                    type="text" className="input h-10 mb-2 w-full border rounded"
-                  />
-                  <p className="mb-2">電話番号</p>
-                  <input
-                    placeholder="電話でのご連絡を希望される方は、こちらに記入ください。"
-                    inputMode="numeric"
-                    pattern="[0-9]*"
-                    name="telNum"
-                    value={form.telNum}
-                    onChange={handleChange}
-                    type="tel" className="input h-10 mb-2 w-full border rounded"
-                  />
+                  <label className="mb-2">お問い合わせ種別</label>
+                  <select
+                    name="inquiryType"
+                    value={inquiryType}
+                    onChange={(e) => setInquiryType(e.target.value as inquiryType)}
+                    className="h-10 mb-2 w-full border rounded"
+                  >
+                    <option value="visit">見学・体験の申し込み</option>
+                    <option value="match">試合の申し込み</option>
+                  </select>
+                  {/**見学・体験 */}
+                  {inquiryType === "visit" && (
+                    <>
+                      <p className="mb-2">お名前（お子様）</p>
+                      <input
+                        placeholder="必須"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        type="text" className="input h-10 mb-2 w-full border rounded"
+                      />
+                      <p className="mb-2">フリガナ</p>
+                      <input
+                        placeholder="必須"
+                        pattern="[\u30A0-\u30FFー\s]+"
+                        name="kana"
+                        value={form.kana}
+                        onChange={handleChange}
+                        type="text" className="input h-10 mb-2 w-full border rounded"
+                      />
+                      <p className="mb-2">現在通っている学校</p>
+                      <input
+                        placeholder="必須"
+                        name="school"
+                        value={form.school}
+                        onChange={handleChange}
+                        type="text" className="input h-10 mb-2 w-full border rounded"
+                      />
+                      <p className="mb-2">学年</p>
+                      <input
+                        placeholder="必須"
+                        name="grade"
+                        value={form.grade}
+                        onChange={handleChange}
+                        type="text" className="input h-10 mb-2 w-full border rounded"
+                      />
+                      <p className="mb-2">性別</p>
+                      <input
+                        placeholder="3年生以降、男女で活動が分かれます。"
+                        name="gender"
+                        value={form.gender}
+                        onChange={handleChange}
+                        type="text" className="input h-10 mb-2 w-full border rounded"
+                      />
+                      <p className="mb-2">電話番号</p>
+                      <input
+                        placeholder="電話でのご連絡を希望される方は、こちらに記入ください。"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
+                        type="tel" className="input h-10 mb-2 w-full border rounded"
+                      />
+                    </>
+                  )}
+                  {inquiryType === "match" && (
+                    <>
+                      <p className="mb-2">チーム名</p>
+                      <input
+                        placeholder="必須"
+                        name="teamName"
+                        value={form.teamName}
+                        onChange={handleChange}
+                        type="e-mail" className="input h-10 mb-2 w-full border rounded"
+                      />
+                    </>
+                  )}
                   <p className="mb-2">メールアドレス</p>
                   <input
                     placeholder="必須"
@@ -143,6 +194,7 @@ export default function Contact() {
                     onChange={handleChange}
                     type="e-mail" className="input h-10 mb-2 w-full border rounded"
                   />
+                  
               </div>
             </div>
           </div>
