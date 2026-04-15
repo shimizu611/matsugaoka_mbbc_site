@@ -102,6 +102,9 @@ export default function Contact() {
                 見学の申し込み、ご質問などございましたら、<br />
                 お気軽にお問い合わせください。
               </p>
+              <p className="text-gray-600 leading-relaxed py-4 tracking-widest">
+                交流戦のお申し込みもお待ちしております。
+              </p>
             </div>
 
             {/* 右：基本フォーム */}
