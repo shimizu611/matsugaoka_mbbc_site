@@ -11,7 +11,7 @@ export default function Welcome(){
                         <div className="md:w-1/2 flex justify-end">
                             <div className="relative w-[90%] md:w-full aspect-[4/3]">
                                 <Image
-                                    src="/images/image010.PNG"
+                                    src="/images/image010-260521.png"
                                     alt="メンバー募集"
                                     fill
                                     className="rounded-2xl object-cover"
