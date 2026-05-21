@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <header id="top" className="fixed top-0 left-0 w-full z-50 border-b bg-[#003366] text-white backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <div className="flex-col">
+        <a href="#home" className="flex-col">
           <div className="font-semibold flex justify-between">
             <button
             >
@@ -46,7 +46,7 @@ export default function Header() {
           </div>
           <div className="font-semibold flex justify-between">MBBC</div>
           <div className="font-normal text-xs hidden md:block border-t flex justify-start">Matsugaoka Mini BasketBall Club</div>
-        </div>
+        </a>
 
         {/**PCmenu */}
         <nav className="hidden md:flex px-3 py-2 gap-6">

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const images = [
   "/images/hero-image-001-260521.png",
-  "/images/hero-image-002-260521.jpg",
+  "/images/hero-image-002-260522.jpg",
   "/images/hero-image-003-260521.jpg",
   "/images/hero-image-004-260521.jpg",
 ];
@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-[60vw] md:h-[100vh] overflow-hidden">
+    <section id="home" className="relative w-full h-[60vw] md:h-[100vh] overflow-hidden mt-18 scroll-mt-18">
       <AnimatePresence mode="wait">
         <motion.div
           key={images[index]}
