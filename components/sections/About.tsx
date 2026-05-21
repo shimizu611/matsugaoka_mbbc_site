@@ -19,8 +19,8 @@ export default function About() {
                                     </h2>
                                 </div>
                             </div>
-                            <h2 className="pt-8 text-3xl md:text-4xl">松が丘ミニバスケットボール</h2>
-                            <h2 className="py-6 text-3xl md:text-4xl">クラブについて</h2>
+                            <h2 className="pt-8 text-2xl md:text-4xl">松が丘ミニバスケットボール</h2>
+                            <h2 className="py-6 text-2xl md:text-4xl">クラブについて</h2>
                             <p className="mt-4 leading-10 text-gray-700">
                                 兵庫県の明石市を拠点に活動しています。
                             </p>
