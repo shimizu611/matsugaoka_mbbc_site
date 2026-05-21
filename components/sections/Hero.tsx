@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 const images = [
   "/images/hero-image-001-260521.png",
   "/images/hero-image-002-260522.jpg",
-  "/images/hero-image-003-260521.jpg",
-  "/images/hero-image-004-260521.jpg",
+  "/images/hero-image-003-260522.jpg",
+  "/images/hero-image-004-260522.jpg",
 ];
 
 export default function Hero() {
