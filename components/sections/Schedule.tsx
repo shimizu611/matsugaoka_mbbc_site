@@ -56,7 +56,7 @@ export default function Schedule(){
 
                 {/**練習コメント */}
                 <div>
-                    <p className="px-2 pt-8">※ 選手のスキルレベルによって練習日・時間は異なります。</p>
+                    <p className="px-2 pt-8">※ 選手のレベルによって、練習日・時間が異なります。</p>
                 </div>
             </section>
         </FadeIn>
