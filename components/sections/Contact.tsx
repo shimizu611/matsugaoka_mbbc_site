@@ -223,7 +223,10 @@ export default function Contact() {
               <div className="w-full md:w-1/2">
                 <p className="mb-2">お問い合わせ内容</p>
                 <textarea
-                  placeholder="見学の申し込み・練習予定の確認など"
+                  placeholder={inquiryType === "visit"
+                    ? "見学の申し込み・練習予定の確認など"
+                    : "交流戦の申し込みなど"
+                  }
                   name="message"
                   value={form.message}
                   onChange={handleChange}
