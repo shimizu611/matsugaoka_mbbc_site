@@ -2,11 +2,13 @@ import FadeIn from "@/components/ui/FadeIn"
 
 export default function Schedule(){
     const boysPracticeDays = [
+        "水曜 18:40～20:30 （第1・第3週）",
         "木曜 16:15～18:00 （第1週を除く）",
         "金曜 18:00～20:30 （第1週を除く）",
         "土曜・日曜 （随時）",
     ]
     const girlsPracticeDays = [
+        "水曜 18:40～20:30 （第2・第4週）",
         "木曜 16:15～18:00 （第1週）",
         "金曜 18:30～20:30 （第1週を除く）",
         "土曜・日曜 （随時）",
@@ -50,6 +52,11 @@ export default function Schedule(){
                             </p>
                         </div>    
                     ))}
+                </div>
+
+                {/**練習コメント */}
+                <div>
+                    <p className="px-2 pt-8">※ 選手のスキルレベルによって練習日・時間は異なります。</p>
                 </div>
             </section>
         </FadeIn>
